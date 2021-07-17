@@ -30,17 +30,19 @@ function blink() {
   tempPola = actionPola.slice();
   resultPola.forEach((k, i) => {
     setTimeout(() => {
-      resultPola[i].style.backgroundColor = 'black';
+      setTimeout(() => {
+        resultPola[i].style.background = 'black';
+
+        setTimeout(() => {
+          resultPola[i].style.background = 'transparent';
+        }, i + 1 * 300);
+      }, i * 500);
 
       setTimeout(() => {
-        resultPola[i].style.backgroundColor = 'white';
-      }, i + 1 * 300);
-    }, i * 500);
+        click = true;
+      }, resultPola.length * 500 + 100);
+    }, 1000);
   });
-
-  setTimeout(() => {
-    click = true;
-  }, resultPola.length * 500);
 }
 
 function klik() {
@@ -51,16 +53,16 @@ function klik() {
       final = false;
       while (chance >= 0) {
         if (chance == 2) {
-          alert(`Anda memasukkan pola yang salah, anda mempunyai kesempatan ${chance} kali lagi`);
+          alert(`You entered the wrong pattern, You have ${chance} more chance`);
           blink();
           break;
         } else if (chance == 1) {
-          alert(`Anda memasukkan pola yang salah, anda mempunyai kesempatan ${chance} kali lagi`);
+          alert(`You entered the wrong pattern, You have ${chance} more chance`);
           blink();
           break;
         } else {
-          alert(`Kesempatan anda sudah habis`);
-          let replay = confirm('Mau Main Lagi ?');
+          alert(`Chance Run Out`);
+          let replay = confirm('Want to play again?');
           if (replay == true) {
             mulai();
             return;
@@ -77,14 +79,18 @@ function klik() {
     if (tempPola.length == 0) {
       stage++;
       final = true;
-      h4.textContent = `Stage ${stage + 1}`;
+      h4.innerHTML = `Correct`;
+
+      setTimeout(() => {
+        h4.innerHTML = `Stage ${stage + 1} <button class="btn btn-dark ms-4" onclick="window.location.reload();">Exit</button>`;
+      }, 1000);
       blink();
     }
 
-    this.style.backgroundColor = 'black';
+    this.style.background = 'black';
 
     setTimeout(() => {
-      this.style.backgroundColor = 'white';
+      this.style.background = 'transparent';
     }, 100);
 
     return;
@@ -100,7 +106,7 @@ function mulai() {
   currentBlink = 0;
   final = true;
   chance = 2;
-  h4.textContent = `Stage ${stage + 1}`;
+  h4.innerHTML = `Stage ${stage + 1} <button class="btn btn-dark ms-4" onclick="window.location.reload();">Exit</button>`;
   click = true;
   blink();
   kotakAction.forEach((k) => {

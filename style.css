@@ -1,11 +1,81 @@
-.kotak {
-  margin: 10px 10px !important;
-  width: 150px !important;
-  height: 150px !important;
-  border: 1px solid black;
-  position: relative;
+h1,
+h4 {
+  color: white;
+  text-shadow: 3px 3px 5px black;
 }
 
-.kotak:hover {
+body {
+  background: url(img/bg.jpg);
+  background-attachment: fixed;
+}
+
+.pv {
+  width: 300px !important;
+  height: 270px;
+  border-radius: 5%;
+  box-shadow: 0px 0px 5px black;
+}
+
+/* Content */
+.preview {
+  width: 80px !important;
+  height: 80px !important;
+  position: relative;
+  border-radius: 5%;
+}
+.preview:hover {
+  cursor: not-allowed;
+}
+
+.action {
+  margin: 10px 10px !important;
+  width: 70px !important;
+  height: 70px !important;
+  position: relative;
+  box-shadow: 0px 0px 4px black;
+  border-radius: 5%;
+}
+
+.act {
+  padding-top: 2rem;
+}
+
+.action:hover {
   cursor: pointer;
+}
+
+@media (min-width: 992px) {
+  body {
+    background: url(img/bg.jpg);
+    background-size: cover;
+    background-position-y: center;
+    background-attachment: fixed;
+  }
+
+  .pv {
+    width: 390px !important;
+    height: 390px;
+    border-radius: 5%;
+    box-shadow: 0px 0px 5px black;
+    margin-left: 50px;
+  }
+
+  .act {
+    padding-top: 0;
+    margin-left: 50px;
+  }
+
+  .preview {
+    width: 120px !important;
+    height: 120px !important;
+    position: relative;
+  }
+
+  .action {
+    width: 120px !important;
+    height: 120px !important;
+    position: relative;
+    box-shadow: 0px 0px 4px black;
+    border-radius: 5%;
+  }
 }

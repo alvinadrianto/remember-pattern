@@ -58,6 +58,7 @@ body {
   width: 240px !important;
   background-color: #c8c8c8;
   border: 3px solid black;
+  margin-bottom: 2rem;
 }
 
 .action:hover {

@@ -123,6 +123,7 @@ h3 {
     border-radius: 5%;
     box-shadow: 0px 0px 5px black;
     margin-left: 0px;
+    margin-bottom: 2rem !important;
   }
 
   .act {
@@ -132,7 +133,6 @@ h3 {
     margin-left: 50px;
     background-color: #c8c8c8;
     margin-top: 0rem !important;
-    margin-bottom: 0;
   }
 
   .preview {
